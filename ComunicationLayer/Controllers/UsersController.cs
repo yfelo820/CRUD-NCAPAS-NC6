@@ -25,6 +25,12 @@ namespace ComunicationLayer.Controllers
             return Ok(await _userService.GetUserById(id));            
         }
 
+        [HttpGet("{pageSize}/{page}")]
+        public async Task<IActionResult> GetUserPagination(int pageSize, int page)
+        {
+            return Ok(await _userService.GetUserPaginations(pageSize, page));
+        }
+
         [HttpPost]
         public async Task<IActionResult> AddUser(User user)
         {

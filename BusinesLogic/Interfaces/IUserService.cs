@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Entities;
+using DataAccessLayer.Pagination;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,6 @@ namespace BusinesLogic.Interfaces
         public Task<User> GetUserById(int Id);
         public Task<User> UpdateUser(User user);
         public Task<User> DeleteUser(int Id);
+        public Task<Pagination<User>> GetUserPaginations(int pageSize, int page);
     }
 }
